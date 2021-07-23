@@ -1,9 +1,10 @@
 /** GOALS
- * set up erase all button which will clear everything 
  * set up eraser which will clear one square at a time 
  * Allow user to change the numbers of grids (Slider) 
  * Color Picker
  * 
+ * 
+ * set up erase all button which will clear everything  🗸
  */
 
 
@@ -13,6 +14,7 @@ let mainGridContainer = document.getElementById("main-grid-container");
 
 let numberOfIndividualDivs = 16;
 
+//For loop add individual divs
 for(let i = 0; i<numberOfIndividualDivs; i++){
     let newContainerDiv = document.createElement("div");
     newContainerDiv.setAttribute("class", "individual-divs");
@@ -38,5 +40,21 @@ function setColor(e){
 }
 
 
+/* 'BLACK' BUTTON PRESSED */
+document.getElementById("black-button").addEventListener("click", setBlackColor);
+
+function setBlackColor(e){
+    e.toElement.style.background="black";
+    console.log(e);
+}
+
+
+
 /*ERASE ALL BUTTON*/
-document.getElementById("erase-all-button").addEventListener("click", function)
+document.getElementById("erase-all-button").addEventListener("click", eraseAll);
+
+function eraseAll(e){
+    for(let i=0; i<getIndividualDivs.length ; i++){
+        getIndividualDivs[i].style.background = "white";
+    }
+}

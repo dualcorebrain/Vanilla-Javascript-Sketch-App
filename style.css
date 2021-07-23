@@ -34,11 +34,28 @@ body{
     
 }
 
+/*BUTTONS*/
+
+/*BUTTONS-CONTAINER*/
+#buttons-container{
+    width: fit-content;
+
+    position: relative;
+    left: 20%;
+
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+/*BLACK BUTTON*/
+#black-button{
+
+}
 
 /*ERASE ALL BUTTON*/
 #erase-all-button{
     max-width: fit-content;
 
     position: relative;
-    left: 10%;
 }
