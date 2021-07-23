@@ -20,6 +20,7 @@ for(let i = 0; i<numberOfIndividualDivs; i++){
 }
 
 
+/* COLOR CHANGING OF INDIVIDUAL DIVS IN THE CONTAINER */
 let getIndividualDivs = document.getElementsByClassName("individual-divs");
 
 
@@ -34,10 +35,8 @@ function setColor(e){
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
     e.toElement.style.background=`#${randomColor}`;
     console.log(e);
-    
-    
-    //e.toElement.setAttribute("background-color", `#${randomColor}`);
-
-    //getIndividualDivs[i].setAttribute("background-color", randomColor);
 }
 
+
+/*ERASE ALL BUTTON*/
+document.getElementById("erase-all-button").addEventListener("click", function)

@@ -33,3 +33,12 @@ body{
     border: 1px solid rgb(100, 54, 54);
     
 }
+
+
+/*ERASE ALL BUTTON*/
+#erase-all-button{
+    max-width: fit-content;
+
+    position: relative;
+    left: 10%;
+}
