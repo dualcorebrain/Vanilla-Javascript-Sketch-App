@@ -1,6 +1,7 @@
 /** GOALS
  * set up eraser which will clear one square at a time 
  * Allow user to change the numbers of grids (Slider) 
+ * Set up functionality for black color
  * Color Picker
  * 
  * 
@@ -44,8 +45,11 @@ function setColor(e){
 document.getElementById("black-button").addEventListener("click", setBlackColor);
 
 function setBlackColor(e){
-    e.toElement.style.background="black";
-    console.log(e);
+    for(i= 0; i<numberOfIndividualDivs; i++){
+        getIndividualDivs[i].addEventListener("mouseenter", function(e){
+            e.toElement.style.background="black";
+        });
+    }
 }
 
 
