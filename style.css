@@ -55,7 +55,6 @@ body{
 
 /*ERASE ALL BUTTON*/
 #erase-all-button{
-    max-width: fit-content;
 
     position: relative;
 }

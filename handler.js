@@ -23,31 +23,45 @@ for(let i = 0; i<numberOfIndividualDivs; i++){
 }
 
 
-/* COLOR CHANGING OF INDIVIDUAL DIVS IN THE CONTAINER */
+/* DEFAULT HOVER BLACK COLOR */
 let getIndividualDivs = document.getElementsByClassName("individual-divs");
 
 
 for(i= 0; i<numberOfIndividualDivs; i++){
     //adds event listener to every elements of class "individual-divs"
-    getIndividualDivs[i].addEventListener("mouseenter", setColor);
+    getIndividualDivs[i].addEventListener("mouseenter", setBlackColor);
 }
 
 
-function setColor(e){
+function setBlackColor(e){
     //sets color to an individual div where the mouse entered
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
-    e.toElement.style.background=`#${randomColor}`;
+    e.toElement.style.background="#000000";
     console.log(e);
 }
 
 
-/* 'BLACK' BUTTON PRESSED */
-document.getElementById("black-button").addEventListener("click", setBlackColor);
+/* 'Black' BUTTON PRESSED */
+document.getElementById("black-button").addEventListener("click", setBlackColorManual);
 
-function setBlackColor(e){
+function setBlackColorManual(e){
     for(i= 0; i<numberOfIndividualDivs; i++){
         getIndividualDivs[i].addEventListener("mouseenter", function(e){
-            e.toElement.style.background="black";
+            e.toElement.style.background="#000000";
+        });
+    }
+
+}
+
+
+/* 'Random Color' BUTTON PRESSED */
+document.getElementById("random-button").addEventListener("click", setRandomColor);
+
+function setRandomColor(e){
+    for(i= 0; i<numberOfIndividualDivs; i++){
+        getIndividualDivs[i].addEventListener("mouseenter", function(e){
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            e.toElement.style.background=`#${randomColor}`;
         });
     }
 }
