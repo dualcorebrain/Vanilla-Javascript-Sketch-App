@@ -58,3 +58,9 @@ body{
 
     position: relative;
 }
+
+
+/*LABEL (FOR SLIDER)*/
+label{
+    color: white;
+}

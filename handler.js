@@ -8,6 +8,40 @@
  * set up erase all button which will clear everything  🗸
  */
 
+/*RANGE PICKER*/
+
+/*ALTERNATIVE METHOD OF RANGE PICKER */
+/*var slider = document.getElementById("range-picker-slider");
+
+slider.oninput = function(e) {
+    //console.log(slider.value);
+
+    let labelElement = document.getElementById("range-label");
+    console.log(labelElement);
+}
+*/
+
+document.getElementById("range-picker-slider").addEventListener("input", rangeSlider);
+
+
+let currentSliderValue;
+
+function rangeSlider(e){
+    let labelElement = document.getElementById("range-label");
+    currentSliderValue = e.srcElement.value;
+
+    labelElement.append(currentSliderValue);
+
+    let target = document.getElementById("buttons-container");
+    console.log(target);
+
+    
+
+
+}
+
+
+
 
 /**MAIN GRID*/
 
@@ -88,3 +122,4 @@ function eraser(e){
         });
     }
 }
+
