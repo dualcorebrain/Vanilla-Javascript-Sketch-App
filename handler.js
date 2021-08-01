@@ -1,7 +1,7 @@
 /** GOALS
- * set up eraser which will clear one square at a time 
+ * set up eraser which will clear one square at a time  🗸
  * Allow user to change the numbers of grids (Slider) 
- * Set up functionality for black color
+ * Set up functionality for black color 🗸
  * Color Picker
  * 
  * 
@@ -74,5 +74,17 @@ document.getElementById("erase-all-button").addEventListener("click", eraseAll);
 function eraseAll(e){
     for(let i=0; i<getIndividualDivs.length ; i++){
         getIndividualDivs[i].style.background = "white";
+    }
+}
+
+
+/*ERASE SINGLE BUTTON*/
+document.getElementById("erase-single-button").addEventListener("click", eraser);
+
+function eraser(e){
+    for(i= 0; i<numberOfIndividualDivs; i++){
+        getIndividualDivs[i].addEventListener("mouseenter", function(e){
+            e.toElement.style.background="#ffffff";
+        });
     }
 }
