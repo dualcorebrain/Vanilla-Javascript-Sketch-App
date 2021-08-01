@@ -27,13 +27,18 @@ document.getElementById("range-picker-slider").addEventListener("input", rangeSl
 let currentSliderValue;
 
 function rangeSlider(e){
+    //DOES NOT WORK
+
     let labelElement = document.getElementById("range-label");
     currentSliderValue = e.srcElement.value;
+    let newText = document.createTextNode(`${currentSliderValue}`);
 
-    labelElement.append(currentSliderValue);
+    labelElement.append(`${newText}`);
 
     let target = document.getElementById("buttons-container");
-    console.log(target);
+    let oldLabelTarget = target.children[5];
+    
+    target.replaceChild(newLabelValueAppended, oldLabelTarget);
 
     
 
