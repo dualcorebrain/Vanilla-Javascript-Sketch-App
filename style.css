@@ -12,26 +12,26 @@ body{
 #main-grid-container{
     background-color: white;
 
-    height: 400px;
-    width: 400px;
+    height: 800px;
+    width: 800px;
 
 
     position: relative;
 
-    top: 30%;
+    top: 5%;
     left: 30%;
 
     display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(20px, 100px));
-
+    /*
+    grid-template-columns: repeat(4, 400px);
+    grid-template-rows: repeat(4, 400px);
+*/
 }
 
 .individual-divs{
-    height: 100px;
-    width: 100px;
     border: 1px solid rgb(100, 54, 54);
-    
+
 }
 
 /*BUTTONS*/
@@ -41,7 +41,8 @@ body{
     width: fit-content;
 
     position: relative;
-    left: 20%;
+    left: 10%;
+    bottom: 50%;
 
     display: grid;
     row-gap: 20px;

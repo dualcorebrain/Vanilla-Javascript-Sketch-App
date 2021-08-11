@@ -29,16 +29,17 @@ let currentSliderValue;
 function rangeSlider(e){
     //DOES NOT WORK
 
-    let labelElement = document.getElementById("range-label");
-    currentSliderValue = e.srcElement.value;
-    let newText = document.createTextNode(`${currentSliderValue}`);
+    let labelElement = document.createElement("label"); //create a new label element
+    currentSliderValue = e.srcElement.value;        //Current SLider value
+    let newText = document.createTextNode(currentSliderValue + " x " + currentSliderValue); //a new text node
 
-    labelElement.append(`${newText}`);
+    labelElement.append(newText);
 
-    let target = document.getElementById("buttons-container");
-    let oldLabelTarget = target.children[5];
+
+    let targetHTMLParentElement = document.getElementById("buttons-container"); 
+    let oldLabelTarget = targetHTMLParentElement.children[5];    //targets the <label> child already placed in HTML 
     
-    target.replaceChild(newLabelValueAppended, oldLabelTarget);
+    targetHTMLParentElement.replaceChild(labelElement, oldLabelTarget); //replaces the values
 
     
 
@@ -46,13 +47,19 @@ function rangeSlider(e){
 }
 
 
-
+//The problem may lie with the fact that with squared numbers, for loops for adding individual divs justs adds the sequentially
 
 /**MAIN GRID*/
 
 let mainGridContainer = document.getElementById("main-grid-container");
 
-let numberOfIndividualDivs = 16;
+let numberOfIndividualDivs = 64;
+
+console.log(mainGridContainer);
+mainGridContainer.style.cssText = "grid-template-columns: repeat(8, 1fr);";
+//mainGridContainer.style.cssText = "grid-template-rows: repeat(4, 200px);";
+
+
 
 //For loop add individual divs
 for(let i = 0; i<numberOfIndividualDivs; i++){
