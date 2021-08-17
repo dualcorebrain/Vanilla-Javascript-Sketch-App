@@ -21,6 +21,24 @@ slider.oninput = function(e) {
 }
 */
 
+
+//The problem may lie with the fact that with squared numbers, for loops for adding individual divs justs adds the sequentially
+
+/**MAIN GRID DEFAULT BEHAVIOUR UPON LOAD*/
+
+let mainGridContainer = document.getElementById("main-grid-container");
+
+let sideLength = 128;
+
+let numberOfIndividualDivs = sideLength**2;
+
+mainGridContainer.style.cssText = `grid-template-columns: repeat(${sideLength}, 1fr);`;
+//mainGridContainer.style.cssText = "grid-template-rows: repeat(4, 200px);";
+
+
+
+
+/**RANGE SLIDER */
 document.getElementById("range-picker-slider").addEventListener("input", rangeSlider);
 
 
@@ -41,23 +59,12 @@ function rangeSlider(e){
     
     targetHTMLParentElement.replaceChild(labelElement, oldLabelTarget); //replaces the values
 
-    
-
 
 }
 
 
-//The problem may lie with the fact that with squared numbers, for loops for adding individual divs justs adds the sequentially
 
-/**MAIN GRID*/
 
-let mainGridContainer = document.getElementById("main-grid-container");
-
-let numberOfIndividualDivs = 64;
-
-console.log(mainGridContainer);
-mainGridContainer.style.cssText = "grid-template-columns: repeat(8, 1fr);";
-//mainGridContainer.style.cssText = "grid-template-rows: repeat(4, 200px);";
 
 
 
@@ -83,7 +90,6 @@ function setBlackColor(e){
     //sets color to an individual div where the mouse entered
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
     e.toElement.style.background="#000000";
-    console.log(e);
 }
 
 
