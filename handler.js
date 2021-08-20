@@ -28,14 +28,18 @@ slider.oninput = function(e) {
 
 let mainGridContainer = document.getElementById("main-grid-container");
 
-let sideLength = 128;
+let width = 8;
 
-let numberOfIndividualDivs = sideLength**2;
+let numberOfIndividualDivs = width**2;
 
-mainGridContainer.style.cssText = `grid-template-columns: repeat(${sideLength}, 1fr);`;
-//mainGridContainer.style.cssText = "grid-template-rows: repeat(4, 200px);";
+mainGridContainer.style.cssText = `grid-template-columns: repeat(${width}, 1fr);`;
 
-
+//For loop adds individual divs to the main-grid-container
+for(let i = 0; i<numberOfIndividualDivs; i++){
+    let newContainerDiv = document.createElement("div");
+    newContainerDiv.setAttribute("class", "individual-divs");
+    mainGridContainer.appendChild(newContainerDiv);
+}
 
 
 /**RANGE SLIDER */
@@ -47,6 +51,7 @@ let currentSliderValue;
 function rangeSlider(e){
     //DOES NOT WORK
 
+    //CHANGES DISPLAYED NUMBER ABOVE THE RANGE SLIDER
     let labelElement = document.createElement("label"); //create a new label element
     currentSliderValue = e.srcElement.value;        //Current SLider value
     let newText = document.createTextNode(currentSliderValue + " x " + currentSliderValue); //a new text node
@@ -59,21 +64,30 @@ function rangeSlider(e){
     
     targetHTMLParentElement.replaceChild(labelElement, oldLabelTarget); //replaces the values
 
+    customDivsAppender(currentSliderValue);
 
 }
 
+function customDivsAppender(currentSliderValue){
+    //For loop REMOVES individual divs in the main-grid-container
+    for(let i = 0; i<numberOfIndividualDivs; i++){
+        let divsToRemove = mainGridContainer.children[0];
+        mainGridContainer.removeChild(divsToRemove);
 
+    }
 
+    console.log(currentSliderValue);
 
+    //This For loop now Adds 'user specified' number of grids to the main-grid-container
+    for(let i = 0; i<currentSliderValue; i++){
+        let newContainerDiv = document.createElement("div");
+        newContainerDiv.setAttribute("class", "individual-divs");
+        mainGridContainer.appendChild(newContainerDiv);
 
+    }
 
-
-//For loop add individual divs
-for(let i = 0; i<numberOfIndividualDivs; i++){
-    let newContainerDiv = document.createElement("div");
-    newContainerDiv.setAttribute("class", "individual-divs");
-    mainGridContainer.appendChild(newContainerDiv);
 }
+
 
 
 /* DEFAULT HOVER BLACK COLOR */
