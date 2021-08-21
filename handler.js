@@ -22,6 +22,7 @@ slider.oninput = function(e) {
 */
 
 
+
 //The problem may lie with the fact that with squared numbers, for loops for adding individual divs justs adds the sequentially
 
 /**MAIN GRID DEFAULT BEHAVIOUR UPON LOAD*/
