@@ -33,6 +33,8 @@ let width = 15;
 let numberOfIndividualDivs = width**2;
 
 mainGridContainer.style.cssText = `grid-template-columns: repeat(${width}, 1fr);`;
+mainGridContainer.style.cssText = `grid-template-rows: repeat(${width}, 1fr);`;
+
 
 //For loop adds individual divs to the main-grid-container
 for(let i = 0; i<numberOfIndividualDivs; i++){
@@ -43,14 +45,15 @@ for(let i = 0; i<numberOfIndividualDivs; i++){
 
 
 /**RANGE SLIDER */
-document.getElementById("range-picker-slider").addEventListener("input", rangeSlider);
+// On Input continuously updates while slider is moving, ideal for changing the slider value
+// On Change continuously only triggers the event after value is changed 
+document.getElementById("range-picker-slider").addEventListener("input", rangeSliderValue);
+document.getElementById("range-picker-slider").addEventListener("change", customDivsRemover);
 
 
 let currentSliderValue;
 
-function rangeSlider(e){
-    //DOES NOT WORK
-
+function rangeSliderValue(e){
     //CHANGES DISPLAYED NUMBER ABOVE THE RANGE SLIDER
     let labelElement = document.createElement("label"); //create a new label element
     currentSliderValue = e.srcElement.value;        //Current SLider value
@@ -63,9 +66,6 @@ function rangeSlider(e){
     let oldLabelTarget = targetHTMLParentElement.children[5];    //targets the <label> child already placed in HTML 
     
     targetHTMLParentElement.replaceChild(labelElement, oldLabelTarget); //replaces the values
-
-    customDivsRemover();
-
 }
 
 function customDivsRemover(){
