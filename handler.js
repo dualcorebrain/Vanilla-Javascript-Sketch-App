@@ -28,7 +28,7 @@ slider.oninput = function(e) {
 
 let mainGridContainer = document.getElementById("main-grid-container");
 
-let width = 8;
+let width = 15;
 
 let numberOfIndividualDivs = width**2;
 
@@ -64,30 +64,42 @@ function rangeSlider(e){
     
     targetHTMLParentElement.replaceChild(labelElement, oldLabelTarget); //replaces the values
 
-    customDivsAppender(currentSliderValue);
+    customDivsRemover();
 
 }
 
-function customDivsAppender(currentSliderValue){
+function customDivsRemover(){
     //For loop REMOVES individual divs in the main-grid-container
-    for(let i = 0; i<numberOfIndividualDivs; i++){
+
+    currentNumberOfDivs = document.getElementById("main-grid-container").childElementCount;
+
+    if(document.getElementById("main-grid-container").hasChildNodes){
+    for(let i = 0; i<currentNumberOfDivs; i++){
         let divsToRemove = mainGridContainer.children[0];
         mainGridContainer.removeChild(divsToRemove);
-
+        }
     }
 
+    customDivsAdder();
+
+}
+
+function customDivsAdder(){
+    //This For loop now Adds 'user specified' number of grids to the main-grid-container
+    let newNumberofDivsToAdd = currentSliderValue**2;
     console.log(currentSliderValue);
 
-    //This For loop now Adds 'user specified' number of grids to the main-grid-container
-    for(let i = 0; i<currentSliderValue; i++){
+
+    for(let i = 0; i<newNumberofDivsToAdd; i++){
         let newContainerDiv = document.createElement("div");
         newContainerDiv.setAttribute("class", "individual-divs");
         mainGridContainer.appendChild(newContainerDiv);
 
     }
 
-}
+    console.log(document.getElementById("main-grid-container").childElementCount);
 
+}
 
 
 /* DEFAULT HOVER BLACK COLOR */
