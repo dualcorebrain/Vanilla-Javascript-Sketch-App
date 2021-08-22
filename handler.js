@@ -22,7 +22,6 @@ slider.oninput = function(e) {
 */
 
 
-
 //The problem may lie with the fact that with squared numbers, for loops for adding individual divs justs adds the sequentially
 
 /**MAIN GRID DEFAULT BEHAVIOUR UPON LOAD*/
@@ -34,7 +33,7 @@ let width = 15;
 let numberOfIndividualDivs = width**2;
 
 mainGridContainer.style.cssText = `grid-template-columns: repeat(${width}, 1fr);`;
-mainGridContainer.style.cssText = `grid-template-rows: repeat(${width}, 1fr);`;
+//mainGridContainer.style.cssText = `grid-template-rows: repeat(${width}, 1fr);`;
 
 
 //For loop adds individual divs to the main-grid-container
@@ -99,7 +98,8 @@ function customDivsAdder(){
     }
 
     console.log(document.getElementById("main-grid-container").childElementCount);
-
+    mainGridContainer.style.cssText = `grid-template-columns: repeat(${currentSliderValue}, 1fr);`;
+    //mainGridContainer.style.cssText = `grid-template-rows: repeat(${currentSliderValue}, 1fr);`;
 }
 
 
