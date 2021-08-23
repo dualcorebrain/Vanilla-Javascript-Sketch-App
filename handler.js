@@ -24,7 +24,7 @@ slider.oninput = function(e) {
 
 //The problem may lie with the fact that with squared numbers, for loops for adding individual divs justs adds the sequentially
 
-/**MAIN GRID DEFAULT BEHAVIOUR UPON LOAD*/
+/**MAIN GRID DEFAULT INITIAL BEHAVIOUR UPON LOAD*/
 
 let mainGridContainer = document.getElementById("main-grid-container");
 
@@ -42,6 +42,13 @@ for(let i = 0; i<numberOfIndividualDivs; i++){
     newContainerDiv.setAttribute("class", "individual-divs");
     mainGridContainer.appendChild(newContainerDiv);
 }
+
+
+
+
+
+
+
 
 
 /**RANGE SLIDER */
@@ -100,7 +107,26 @@ function customDivsAdder(){
     console.log(document.getElementById("main-grid-container").childElementCount);
     mainGridContainer.style.cssText = `grid-template-columns: repeat(${currentSliderValue}, 1fr);`;
     //mainGridContainer.style.cssText = `grid-template-rows: repeat(${currentSliderValue}, 1fr);`;
+
+
+
+    //Problematic to remove, needs modification
+    if(numberOfIndividualDivs != 15){
+        for(i= 0; i<(newNumberofDivsToAdd**2); i++){
+            //adds event listener to every elements of class "individual-divs"
+            getIndividualDivs[i].addEventListener("mouseenter", setBlackColor);
+        }
+    }
 }
+
+
+/**END OF GRID WORKS */
+
+
+/**BEGINNING OF COLOR WORKS */
+
+
+
 
 
 /* DEFAULT HOVER BLACK COLOR */
@@ -120,15 +146,49 @@ function setBlackColor(e){
 }
 
 
+
+
+
+
+
+/**numberOfIndividual divs variable is problematic. The reason why not all divs change on hover */
+
+
+
++
+
+
+
+
+
 /* 'Black' BUTTON PRESSED */
 document.getElementById("black-button").addEventListener("click", setBlackColorManual);
 
 function setBlackColorManual(e){
-    for(i= 0; i<numberOfIndividualDivs; i++){
-        getIndividualDivs[i].addEventListener("mouseenter", function(e){
-            e.toElement.style.background="#000000";
-        });
+/**
+ * First check if the slider has been changed
+ * > If not then currentSliderValue will be undefined. Means the page has been just loaded proceed upto numberOfIndividualDivs
+ * > Else the currentSliderValue has been changed go upto currentSliderValue in this case since different ammounts of divs now
+ */
+
+    if(currentSliderValue == undefined){
+
+        for(i= 0; i<numberOfIndividualDivs; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                e.toElement.style.background="#000000";
+            });
+        }
+
+    }else{
+        
+        for(i= 0; i<currentSliderValue; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                e.toElement.style.background="#000000";
+            });
+        }
     }
+
+    
 
 }
 
@@ -137,11 +197,21 @@ function setBlackColorManual(e){
 document.getElementById("random-button").addEventListener("click", setRandomColor);
 
 function setRandomColor(e){
-    for(i= 0; i<numberOfIndividualDivs; i++){
-        getIndividualDivs[i].addEventListener("mouseenter", function(e){
-            var randomColor = Math.floor(Math.random()*16777215).toString(16);
-            e.toElement.style.background=`#${randomColor}`;
-        });
+    console.log(currentSliderValue);
+    if(currentSliderValue == undefined){
+        for(i= 0; i<numberOfIndividualDivs; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                e.toElement.style.background=`#${randomColor}`;
+            });
+        }
+    }else{
+        for(i= 0; i<currentSliderValue; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                e.toElement.style.background=`#${randomColor}`;
+            });
+        }
     }
 }
 
