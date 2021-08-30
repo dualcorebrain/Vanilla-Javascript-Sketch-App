@@ -1,5 +1,3 @@
-
-
 <h1>Vanilla Javascript Sketch App<h1>
 
 <h3>Things to do and aims: </h3>
