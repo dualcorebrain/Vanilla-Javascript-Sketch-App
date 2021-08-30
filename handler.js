@@ -1,10 +1,8 @@
 /** GOALS
  * set up eraser which will clear one square at a time  🗸
- * Allow user to change the numbers of grids (Slider) 
+ * Allow user to change the numbers of grids (Slider) 🗸
  * Set up functionality for black color 🗸
  * Color Picker
- * 
- * 
  * set up erase all button which will clear everything  🗸
  */
 
@@ -94,7 +92,6 @@ function customDivsRemover(){
 function customDivsAdder(){
     //This For loop now Adds 'user specified' number of grids to the main-grid-container
     let newNumberofDivsToAdd = currentSliderValue**2;
-    console.log(currentSliderValue);
 
 
     for(let i = 0; i<newNumberofDivsToAdd; i++){
@@ -104,12 +101,12 @@ function customDivsAdder(){
 
     }
 
-    console.log(document.getElementById("main-grid-container").childElementCount);
+    //console.log(document.getElementById("main-grid-container").childElementCount);
     mainGridContainer.style.cssText = `grid-template-columns: repeat(${currentSliderValue}, 1fr);`;
     //mainGridContainer.style.cssText = `grid-template-rows: repeat(${currentSliderValue}, 1fr);`;
 
 
-
+/*
     //Problematic to remove, needs modification
     if(numberOfIndividualDivs != 15){
         for(i= 0; i<(newNumberofDivsToAdd**2); i++){
@@ -117,10 +114,15 @@ function customDivsAdder(){
             getIndividualDivs[i].addEventListener("mouseenter", setBlackColor);
         }
     }
+*/
 }
 
 
 /**END OF GRID WORKS */
+
+
+
+
 
 
 /**BEGINNING OF COLOR WORKS */
@@ -155,7 +157,7 @@ function setBlackColor(e){
 
 
 
-+
+
 
 
 
@@ -170,18 +172,24 @@ function setBlackColorManual(e){
  * > If not then currentSliderValue will be undefined. Means the page has been just loaded proceed upto numberOfIndividualDivs
  * > Else the currentSliderValue has been changed go upto currentSliderValue in this case since different ammounts of divs now
  */
+    //console.log(currentSliderValue);
 
-    if(currentSliderValue == undefined){
+    let currentNumberofTotalDivs = currentSliderValue**2;       //We have to create a new variable for this within this section, because using general valued declared above may be 'undefined or outdated'
 
-        for(i= 0; i<numberOfIndividualDivs; i++){
+    if(currentSliderValue == undefined){{
+
+        console.log("default ran");
+        for(i= 0; i<currentNumberofTotalDivs; i++){
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 e.toElement.style.background="#000000";
             });
         }
+    }
 
     }else{
-        
-        for(i= 0; i<currentSliderValue; i++){
+        //console.log("undefiend ran");
+
+        for(i= 0; i<currentNumberofTotalDivs; i++){
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 e.toElement.style.background="#000000";
             });
@@ -189,24 +197,30 @@ function setBlackColorManual(e){
     }
 
     
-
 }
-
 
 /* 'Random Color' BUTTON PRESSED */
 document.getElementById("random-button").addEventListener("click", setRandomColor);
 
 function setRandomColor(e){
-    console.log(currentSliderValue);
+
+    console.log(currentSliderValue + "from setRandomColor");
+
+    let currentNumberofTotalDivs = currentSliderValue**2;
+
     if(currentSliderValue == undefined){
+
         for(i= 0; i<numberOfIndividualDivs; i++){
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 var randomColor = Math.floor(Math.random()*16777215).toString(16);
                 e.toElement.style.background=`#${randomColor}`;
             });
         }
+
     }else{
-        for(i= 0; i<currentSliderValue; i++){
+        console.log(currentNumberofTotalDivs + "from setRandomColor else");
+
+        for(i= 0; i<currentNumberofTotalDivs; i++){
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 var randomColor = Math.floor(Math.random()*16777215).toString(16);
                 e.toElement.style.background=`#${randomColor}`;
@@ -231,10 +245,22 @@ function eraseAll(e){
 document.getElementById("erase-single-button").addEventListener("click", eraser);
 
 function eraser(e){
-    for(i= 0; i<numberOfIndividualDivs; i++){
-        getIndividualDivs[i].addEventListener("mouseenter", function(e){
-            e.toElement.style.background="#ffffff";
-        });
+    let currentNumberofTotalDivs = currentSliderValue**2;
+
+    if(currentSliderValue == undefined){
+
+        for(i= 0; i<numberOfIndividualDivs; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                e.toElement.style.background="#ffffff";
+            });
+        }
+
+    }else{
+        for(i= 0; i<currentNumberofTotalDivs; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                e.toElement.style.background="#ffffff";
+            });
+        }
     }
 }
 
