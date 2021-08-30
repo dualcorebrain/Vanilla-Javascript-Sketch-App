@@ -183,7 +183,7 @@ function setBlackColorManual(e){
 
         //!!!!! Both for loops rely on 'currentNumberofTotalDivs' variable. Should not one of them rely on 'numberOfIndividualDivs'? !!!!!!
 
-        for(i= 0; i<currentNumberofTotalDivs; i++){             
+        for(i= 0; i<numberOfIndividualDivs; i++){             
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 e.toElement.style.background="#000000";
             });
@@ -272,7 +272,6 @@ function eraser(e){
 /* COLOR PICKER */
 document.getElementById("color-picker").addEventListener("input", colorPicker);
 
-//Color picker not working on the initial default grid
 function colorPicker(e){
     let currentNumberofTotalDivs = currentSliderValue**2;
 
@@ -283,20 +282,21 @@ function colorPicker(e){
 
     if(currentSliderValue == undefined){{
 
-        for(i= 0; i<currentNumberofTotalDivs; i++){
+        for(i= 0; i<numberOfIndividualDivs; i++){
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 e.toElement.style.background=`${currentCustomColorSelected}`;
             });
         }
+
     }
 
     }else{
-        //console.log("undefiend ran");
 
         for(i= 0; i<currentNumberofTotalDivs; i++){
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 e.toElement.style.background=`${currentCustomColorSelected}`;
             });
         }
+
     }
 }
