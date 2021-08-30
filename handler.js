@@ -2,6 +2,7 @@
  * set up eraser which will clear one square at a time  🗸
  * Allow user to change the numbers of grids (Slider) 🗸
  * Set up functionality for black color 🗸
+ * Add Fullscreen button
  * Color Picker
  * set up erase all button which will clear everything  🗸
  */
@@ -179,7 +180,10 @@ function setBlackColorManual(e){
     if(currentSliderValue == undefined){{
 
         console.log("default ran");
-        for(i= 0; i<currentNumberofTotalDivs; i++){
+
+        //!!!!! Both for loops rely on 'currentNumberofTotalDivs' variable. Should not one of them rely on 'numberOfIndividualDivs'? !!!!!!
+
+        for(i= 0; i<currentNumberofTotalDivs; i++){             
             getIndividualDivs[i].addEventListener("mouseenter", function(e){
                 e.toElement.style.background="#000000";
             });
@@ -264,3 +268,35 @@ function eraser(e){
     }
 }
 
+
+/* COLOR PICKER */
+document.getElementById("color-picker").addEventListener("input", colorPicker);
+
+//Color picker not working on the initial default grid
+function colorPicker(e){
+    let currentNumberofTotalDivs = currentSliderValue**2;
+
+
+    let colorElementpath = document.getElementById("color-picker");
+    let currentCustomColorSelected = colorElementpath.value;
+
+
+    if(currentSliderValue == undefined){{
+
+        for(i= 0; i<currentNumberofTotalDivs; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                e.toElement.style.background=`${currentCustomColorSelected}`;
+            });
+        }
+    }
+
+    }else{
+        //console.log("undefiend ran");
+
+        for(i= 0; i<currentNumberofTotalDivs; i++){
+            getIndividualDivs[i].addEventListener("mouseenter", function(e){
+                e.toElement.style.background=`${currentCustomColorSelected}`;
+            });
+        }
+    }
+}
