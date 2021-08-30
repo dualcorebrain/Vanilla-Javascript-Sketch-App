@@ -3,7 +3,7 @@
  * Allow user to change the numbers of grids (Slider) 🗸
  * Set up functionality for black color 🗸
  * Add Fullscreen button
- * Color Picker
+ * Color Picker 🗸
  * set up erase all button which will clear everything  🗸
  */
 
