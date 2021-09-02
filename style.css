@@ -47,6 +47,7 @@ body{
     display: grid;
     row-gap: 20px;
     column-gap: 20px;
+
 }
 
 /*BLACK BUTTON*/
@@ -64,4 +65,63 @@ body{
 /*LABEL (FOR SLIDER)*/
 label{
     color: white;
+}
+
+/*RANGE INPUT AND LABEL STYLINGS*/
+#range-label{
+}
+
+
+#range-picker-slider{
+    color: red;
+    background: transparent;
+    opacity: 50%;
+}
+
+
+#range-picker-slider:hover{
+    opacity: 100%;
+
+}
+
+
+
+
+
+
+
+/*CSS MEDIA QUERIES*/
+@media(max-width: 1152px){
+    #main-grid-container{
+        height: 700px;
+        width: 700px;
+    }
+
+    #buttons-container{
+        bottom: 50%;
+    }
+
+}
+
+@media(max-width: 1010px){
+    #main-grid-container{
+        top: 18%;
+        height: 600px;
+        width: 600px;
+    }
+
+    #buttons-container{
+        bottom: 30%;
+    }
+
+
+@media(max-width: 1010px){
+    #main-grid-container{
+        top: 18%;
+        width: 80%;
+    }
+
+    #buttons-container{
+        bottom: 30%;
+    }
 }
