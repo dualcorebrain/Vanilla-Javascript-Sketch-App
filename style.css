@@ -19,6 +19,7 @@ body{
     width: 800px;
 
 
+
     position: relative;
 
     top: 5%;
@@ -37,7 +38,7 @@ body{
 
 }
 
-/*BUTTONS*/
+
 
 /*BUTTONS-CONTAINER*/
 #buttons-container{
@@ -51,12 +52,50 @@ body{
     row-gap: 20px;
     column-gap: 20px;
 
+    padding: 10px;
+
+    border:  1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 70px 10px rgb(14, 14, 15);
 }
 
-/*BLACK BUTTON*/
-#black-button{
+
+/*BUTTONS*/
+
+
+/*ALL BUTTONS*/
+
+.button{
+    background-image: linear-gradient(to right, #003973 0%, #E5E5BE  51%, #003973  100%);
+
+
+    margin: 5px 2px;
+    padding: 15px 35px;
+
+
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: 0.5s;
+
+    background-image: linear-gradient(to right, #003973 0%, #E5E5BE  51%, #003973  100%);
+    background-size: 200% auto;
+
+    color: white;            
+
+    box-shadow: 0 0 20px #eee;
+
+    border-radius: 10px;
 
 }
+
+.button:hover{
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
 
 /*ERASE ALL BUTTON*/
 #erase-all-button{
@@ -70,9 +109,7 @@ label{
     color: white;
 }
 
-/*RANGE INPUT AND LABEL STYLINGS*/
-#range-label{
-}
+/*RANGE INPUT*/
 
 
 #range-picker-slider{
@@ -94,6 +131,34 @@ label{
 
 
 /*CSS MEDIA QUERIES*/
+
+@media(min-width: 2122px){
+    #main-grid-container{
+        bottom: 20%;
+        height: 1250px;
+        width: 1250px;
+    }
+
+    #buttons-container{
+        top: -45%;
+    }
+
+}
+
+
+@media(min-width: 1153px) and (min-height: 900px){
+    #main-grid-container{
+        top: 12%;
+        /*height: 60vw;
+        width: 60vw;*/
+    }
+
+    #buttons-container{
+        bottom: 30%;
+    }
+
+}
+
 @media(max-width: 1152px){
     #main-grid-container{
         height: 700px;
