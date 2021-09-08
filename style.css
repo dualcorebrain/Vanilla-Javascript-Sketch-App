@@ -145,7 +145,7 @@ label{
 
 }
 
-
+/*SCALING FOR 4K and 1440p, TAKE MIN-WIDTH INTO CONSIDERATION*/
 @media(min-width: 1153px) and (min-height: 900px){
     #main-grid-container{
         top: 12%;
@@ -159,37 +159,81 @@ label{
 
 }
 
+/*SCALING FOR 1080p, TAKE MIN-WIDTH INTO CONSIDERATION*/
+@media(min-width: 1153px) and (min-height: 700px){
+    #main-grid-container{
+        top: 10%;
+        /*height: 60vw;
+        width: 60vw;*/
+    }
+
+    #buttons-container{
+        bottom: 55%;
+        margin-right: 155;
+
+    }
+
+}
+
+
+
 @media(max-width: 1152px){
     #main-grid-container{
+        margin-left: 5%;
         height: 700px;
         width: 700px;
     }
 
     #buttons-container{
         bottom: 50%;
+        right: 5%;
     }
 
 }
 
-@media(max-width: 1010px){
+
+
+
+/*TABLETS*/
+@media (min-width: 501px) and (max-width: 1080px){
     #main-grid-container{
-        top: 18%;
-        height: 600px;
-        width: 600px;
+        top: 0.5vh;
+        left: 10%;
+        width: 75vw;
+        height: 75vw;
+
     }
 
     #buttons-container{
-        bottom: 30%;
+        display: flex;
+        flex-direction: row;
+
+        max-width: min-content;
+        max-height: min-content;
+
+        margin-right: auto;
+
+       
+
     }
 }
 
-@media(max-width: 1010px){
+/*PHONES*/
+@media (min-width: 100px) and (max-width: 500px){
     #main-grid-container{
-        top: 18%;
-        width: 80%;
+        width: 95vw;
+        height: 95vw;
+
     }
 
     #buttons-container{
-        bottom: 30%;
+        display: flex;
+        flex-direction: row;
+
+
+        margin-right: auto;
+
+        top: 40vh;
+
     }
 }
