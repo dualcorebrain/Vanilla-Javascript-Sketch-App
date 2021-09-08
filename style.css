@@ -6,9 +6,6 @@
 
 body{
     background: linear-gradient(45deg, rgb(48, 6, 33) 10%, rgba(0,0,0,1) 53%);    
-    
-    
-    
     height: 100vh;
 }
 
@@ -189,7 +186,16 @@ label{
         right: 5%;
     }
 
+    .button{
+        margin: 1px 1px;
+
+        max-width: 20%;
+        max-height: 10%;
+    }
+
 }
+
+
 
 
 
@@ -200,40 +206,115 @@ label{
         top: 0.5vh;
         left: 10%;
         width: 75vw;
-        height: 75vw;
+        height: 85vw;
 
     }
 
     #buttons-container{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
 
-        max-width: min-content;
-        max-height: min-content;
+        padding-left: 20px;
+        padding-right: 0;
+        
+
+        zoom: 0.7;
 
         margin-right: auto;
 
+        position: fixed;
+        left: 10vw;
+        bottom: 3vh;
+
        
 
+    }
+
+    .button{
+        flex: 100%;
+        padding: 4% 0%;
+        width: 15vw;
+        text-align: center;
+
+
+    }
+
+    #range-picker-slider{
+        width: 40%;
     }
 }
 
 /*PHONES*/
 @media (min-width: 100px) and (max-width: 500px){
     #main-grid-container{
+        top: 0.5vh;
+        left: -2vw;
         width: 95vw;
-        height: 95vw;
+        height: 90vw;;
 
     }
 
     #buttons-container{
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        padding: 4%;
+        grid-template-columns: 1fr 1fr;
+        
 
+        /*
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;*/
+
+        width: 100vw;
+
+
+        height: 72vh;
+
+
+
+        zoom: 0.7;
 
         margin-right: auto;
+        margin-left: auto;
 
-        top: 40vh;
+        position: fixed;
+        bottom: 1vh;
 
+        
+
+       
+    }
+    .button{
+        flex: 100%;
+        padding: 10% 50%;
+        text-align: center;
+
+        grid-column: 1/3;
+
+    }
+
+    #color-picker-container{
+        margin-top: 10%;
+        grid-column: 1/3;
+
+    }
+
+    #color-picker{
+        width: 30%;
+        height: 200%;
+    }
+
+    #custom-color-text{
+        bottom: 50%;
+    }
+
+    #range-label{
+        grid-column: 1/3;
+    }
+
+    #range-picker-slider{
+        grid-column: 1/3;
     }
 }
