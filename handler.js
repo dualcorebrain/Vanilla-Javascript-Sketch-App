@@ -76,11 +76,11 @@ function customDivsRemover(){
     currentNumberOfDivs = document.getElementById("main-grid-container").childElementCount;
 
     if(document.getElementById("main-grid-container").hasChildNodes){
-    for(let i = 0; i<currentNumberOfDivs; i++){
-        let divsToRemove = mainGridContainer.children[0];
-        mainGridContainer.removeChild(divsToRemove);
+        for(let i = 0; i<currentNumberOfDivs; i++){
+            let divsToRemove = mainGridContainer.children[0];
+            mainGridContainer.removeChild(divsToRemove);
+            }
         }
-    }
 
     customDivsAdder();
 
