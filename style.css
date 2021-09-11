@@ -9,6 +9,28 @@ body{
     height: 100vh;
 }
 
+
+#nav-bar{
+    position: fixed;
+    top: 92vh;
+    left: 83vw;
+
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: fit-content;
+
+    z-index: 0;
+}
+
+h3{
+    color: white;
+    margin-right: 10px;
+}
+
+
 #main-grid-container{
     background-color: white;
 
@@ -256,6 +278,11 @@ label{
 
 
 
+@media(max-width: 1530px){
+    #nav-bar{
+        visibility: hidden;
+    }
+}
 
 
 
@@ -378,6 +405,7 @@ label{
         zoom: 0.7;
 
         margin-right: auto;
+        margin-left: auto;
 
         position: fixed;
         left: 10vw;
@@ -397,7 +425,7 @@ label{
     }
 
     #range-picker-slider{
-        width: 40%;
+        width: 70%;
     }
 }
 
@@ -483,6 +511,7 @@ label{
 }
 
 
+/*FOR 18:9 ASPECT RATIO PHONES*/
 @media (min-width: 100px) and (max-width: 500px) and (max-height: 900px){
     #buttons-container{
         zoom: 0.35;
@@ -497,4 +526,10 @@ label{
         min-width: -webkit-fill-available;
         padding: 10% 0%;
         }
+}
+
+@media (min-width: 100px) and (max-width: 500px) and (max-height: 728px){
+    #buttons-container{
+        zoom: 0.27;
+    }
 }

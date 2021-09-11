@@ -265,7 +265,7 @@ function eraser(e){
 }
 
 
-/* COLOR PICKER */
+/* CUSTOM COLOR PICKER */
 document.getElementById("color-picker").addEventListener("input", colorPicker);
 
 function colorPicker(e){
