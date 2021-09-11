@@ -443,14 +443,20 @@ label{
 
        
     }
+
+
     .button{
         flex: 100%;
-        padding: 10% 50%;
+        font-size: larger;
         text-align: center;
+        min-width: -webkit-fill-available;
+        padding: 10% 0%;
 
         grid-column: 1/3;
 
     }
+
+
 
     #color-picker-container{
         margin-top: 10%;
