@@ -46,10 +46,6 @@ for(let i = 0; i<numberOfIndividualDivs; i++){
 
 
 
-
-
-
-
 /**RANGE SLIDER */
 // On Input continuously updates while slider is moving, ideal for changing the slider value
 // On Change continuously only triggers the event after value is changed 
