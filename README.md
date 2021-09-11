@@ -13,4 +13,4 @@
 
 <br>
 <br>
-![demonstration](https://user-images.githubusercontent.com/30510048/132961281-3347d9fe-bf30-4fdb-b9a0-eb4473d7f9e7.gif)
+![demonstration](https://raw.githubusercontent.com/dualcorebrain/Vanilla-Javascript-Sketch-App/master/images/demonstration.gif)
