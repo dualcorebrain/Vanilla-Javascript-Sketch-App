@@ -1,4 +1,6 @@
 <h1>Vanilla Javascript Sketch App<h1>
+<h5>(Link on the side!) </h5>
+
 
 <h3>Things to do and aims: </h3>
 <ul>
@@ -13,5 +15,8 @@
 
 <br>
 <br>
-    
+<br>
+
+  
+<h3>Demonstration: </h3>
 ![demonstration](https://user-images.githubusercontent.com/30510048/132961592-f6b9c904-fc15-4098-bcb8-c7c2f8c86b03.gif)
